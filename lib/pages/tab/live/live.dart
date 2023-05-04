@@ -81,15 +81,17 @@ class _LiveState extends State<Live> {
                 padding:const EdgeInsets.only(left: 6,right: 6),
                 child: Text(descriptions,style: const TextStyle(color: Colors.black54,fontWeight: FontWeight.normal,fontSize: 17),),
               ),
+              const SizedBox(height: 250,),
+              //#copyright
+              Container(
+                margin: const EdgeInsets.only(bottom: 20),
+                child: Center(
+                  child: Text(copyright,style: const TextStyle(color: Colors.black54,fontSize: 17,fontWeight: FontWeight.normal),),
+                ),
+              )
             ],
           ),
-         //#copyright
-         Container(
-           margin: const EdgeInsets.only(bottom: 20),
-           child: Center(
-             child: Text(copyright,style: const TextStyle(color: Colors.black54,fontSize: 17,fontWeight: FontWeight.normal),),
-           ),
-         )
+
         ],
       ),
     );

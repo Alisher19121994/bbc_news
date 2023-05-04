@@ -1,5 +1,5 @@
 import 'package:bbc_news/components/appImage.dart';
-import 'package:bbc_news/pages/tab/coronavirus/coronavirus_pandemic.dart';
+import 'package:bbc_news/pages/drawer/drawer_page.dart';
 import 'package:bbc_news/pages/tab/live/live.dart';
 import 'package:bbc_news/pages/tab/myNews/my_news.dart';
 import 'package:bbc_news/pages/tab/popular/popular.dart';
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
-  static final String id = "mainPage";
+  static const String id = "mainPage";
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -20,9 +20,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 6,
+      length: 5,
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: const DrawerPage(),
         appBar: AppBar(
           elevation: 0,
           backgroundColor: const Color(0xffa01213),
@@ -54,7 +54,6 @@ class _MainPageState extends State<MainPage> {
                 Tab(child: Text("My News",style: TextStyle(color: Colors.white),),),
                 Tab(child: Text("Popular",style: TextStyle(color: Colors.white),),),
                 Tab(child: Text("Live",style: TextStyle(color: Colors.white),),),
-                Tab(child: Text("Others",style: TextStyle(color: Colors.white),),),
               ]
           ),
         ),
@@ -65,7 +64,6 @@ class _MainPageState extends State<MainPage> {
             MyNews(),
             Popular(),
             Live(),
-            CoronaVirus()
           ],
         ),
 
