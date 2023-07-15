@@ -3,7 +3,7 @@ import 'package:bbc_news/pages/drawer/drawer_page.dart';
 import 'package:bbc_news/pages/tab/live/live.dart';
 import 'package:bbc_news/pages/tab/myNews/my_news.dart';
 import 'package:bbc_news/pages/tab/popular/popular.dart';
-import 'package:bbc_news/pages/tab/topStories/top_stories.dart';
+import 'package:bbc_news/pages/tab/topStories/top_stories_page.dart';
 import 'package:bbc_news/pages/tab/video/video.dart';
 import 'package:flutter/material.dart';
 

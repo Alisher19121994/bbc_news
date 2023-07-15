@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DataReadablePage extends StatefulWidget {
-  const DataReadablePage({Key? key}) : super(key: key);
+class NewsReadablePage extends StatefulWidget {
+  const NewsReadablePage({Key? key}) : super(key: key);
   static const String id = "dataReadablePage";
   @override
-  State<DataReadablePage> createState() => _DataReadablePageState();
+  State<NewsReadablePage> createState() => _NewsReadablePageState();
 }
 
-class _DataReadablePageState extends State<DataReadablePage> {
+class _NewsReadablePageState extends State<NewsReadablePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
