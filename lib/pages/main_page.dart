@@ -1,4 +1,3 @@
-import 'package:bbc_news/components/appImage.dart';
 import 'package:bbc_news/pages/drawer/drawer_page.dart';
 import 'package:bbc_news/pages/tab/live/live.dart';
 import 'package:bbc_news/pages/tab/myNews/my_news.dart';
@@ -30,32 +29,71 @@ class _MainPageState extends State<MainPage> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Text("BBC News",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,))
+              Text("BBC News",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ))
             ],
           ),
           actions: [
             IconButton(
-                onPressed: (){},
-                icon: const Icon(Icons.search,color: Colors.white,)
-            ),
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                )),
             IconButton(
-                onPressed: (){},
-                icon: const Icon(Icons.more_vert,color: Colors.white,)
-            )
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.more_vert,
+                  color: Colors.white,
+                ))
           ],
           bottom: const TabBar(
-            isScrollable: true,
+              isScrollable: true,
               indicatorColor: Colors.white,
-              unselectedLabelStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.normal,fontSize: 14),
-              labelStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 17),
+              unselectedLabelStyle: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 14),
+              labelStyle: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17),
               tabs: [
-                Tab(child: Text("Top Stories",style: TextStyle(color: Colors.white),),),
-                Tab(child: Text("Video",style: TextStyle(color: Colors.white),),),
-                Tab(child: Text("My News",style: TextStyle(color: Colors.white),),),
-                Tab(child: Text("Popular",style: TextStyle(color: Colors.white),),),
-                Tab(child: Text("Live",style: TextStyle(color: Colors.white),),),
-              ]
-          ),
+                Tab(
+                  child: Text(
+                    "Top Stories",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    "Video",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    "My News",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    "Popular",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    "Live",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ]),
         ),
         body: const TabBarView(
           children: [
@@ -66,7 +104,6 @@ class _MainPageState extends State<MainPage> {
             Live(),
           ],
         ),
-
       ),
     );
   }

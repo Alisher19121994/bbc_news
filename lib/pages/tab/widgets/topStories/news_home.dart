@@ -7,12 +7,12 @@ import 'news_of_list.dart';
 Widget newsHome(List<Articles> articleList, bool isLoading) {
   return Stack(
     children: [
-      ListView.builder(
-        itemCount: articleList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return newsOfList(articleList as Articles);
-        },
-      ),
+      // ListView.builder(
+      //   itemCount: articleList.length,
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return newsOfList(articleList);
+      //   },
+      // ),
       isLoading
           ? const Center(
               child: CircularProgressIndicator(),

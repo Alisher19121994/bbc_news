@@ -4,35 +4,29 @@ import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
-class Services {
-  static const String URL = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-04&sortBy=publishedAt&apiKey=778edef0946f4dc9923f9befe47a8402";
-  //static const String URL = "newsapi.org/v2/everything?q=tesla&from=2023-04-04&sortBy=publishedAt&apiKey=";
+import '../pages/tab/topStories/model/news_list.dart';
 
-  /// Http Apis
-  static String apiNewsList = "778edef0946f4dc9923f9befe47a8402";
+class Services {
+  static const String URL = "https://newsapi.org/v2/everything?q=tesla&from=2023-06-23&sortBy=publishedAt&apiKey=268bad56779848119747cb5cf10733a6";
 
   /// Http
-  static Future<TopNews?> GET() async {
+  static Future<NewsList?> GET() async {
     var logger = Logger();
-   // var uri = Uri.http(URL, api, params);
     final response = await http.get(Uri.parse(URL));
-  //  var response = await get(uri, headers: {'Content-Type': 'application/json; charset=UTF-8'});
     if (response.statusCode == 200) {
       logger.e(response);
-        final Map<String, dynamic> body = jsonDecode(response.body);
-        final TopNews topNews = TopNews.fromJson(body);
+      final Map<String, dynamic> json = jsonDecode(response.body);
+      final NewsList topNews = NewsList.fromJson(json);
       return topNews;
     }
+    return null;
   }
 
-  static Map<String, String> paramsEmpty() {
-    Map<String, String> params = {};
-    return params;
-  }
 
-  // static List<Articles> parseOfNewsList(String response){
+
+  // static List<ArticleList> parseOfNewsList(String response){
   //   dynamic json = jsonDecode(response);
-  //   var newsData = List<Articles>.from(json.map((data)=>Articles.fromJson(data)));
+  //   var newsData = List<ArticleList>.from(json.map((data)=>ArticleList.fromJson(data)));
   //   return newsData;
   // }
 }

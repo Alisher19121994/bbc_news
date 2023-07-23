@@ -8,8 +8,6 @@ import 'package:bbc_news/pages/tab/topStories/nextClickedPage/data_page.dart';
 import 'package:bbc_news/pages/tab/topStories/top_stories_page.dart';
 import 'package:bbc_news/pages/tab/video/video.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'bloc/topStories/cubit/news_list_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,11 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-     // home: const SplashPage(),
-      home: BlocProvider(
-        create: (BuildContext context) => NewsListOfCubit(),
-        child:const TopStories(),
-      ),
+      home: const SplashPage(),
       routes: {
         MainPage.id: (context) => const MainPage(),
         TopStories.id: (context) => const TopStories(),

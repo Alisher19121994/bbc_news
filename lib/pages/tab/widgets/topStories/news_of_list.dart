@@ -1,7 +1,10 @@
-import 'package:bbc_news/pages/tab/topStories/model/top_news.dart';
-import 'package:flutter/material.dart';
+import 'dart:js';
 
-Widget newsOfList(Articles articles){
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import '../../../../controller/topStories/top_stories.dart';
+
+Widget listOfNews(TopStoriesController topStoriesController,int index){
   return GestureDetector(
     onTap: (){
      // Navigator.pushNamed(context, DataReadablePage.id);
@@ -15,16 +18,12 @@ Widget newsOfList(Articles articles){
       child: Row(
         children: [
           //#image
-          Container(
-           // height: MediaQuery.of(context).size.height,
+          SizedBox(
+            //height: MediaQuery.of(context).size.height,
             width: 190,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(articles.urlToImage??''),
-                    fit: BoxFit.cover
-                )
-            ),
-          ),
+           child: Image.network(topStoriesController.articleList[index].urlToImage??'',),
+
+    ),
           const SizedBox(width: 10,),
           //#title & time,location
           Expanded(
@@ -37,23 +36,22 @@ Widget newsOfList(Articles articles){
                 children: [
                   //#title
                   Text(
-                      articles.title??"",style: const TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold)),
+                      topStoriesController.articles.title??"",style: const TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold)),
                   //#time & location
                   Row(
                     children: [
                       //# time
-                      Text("2h",style: const TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal),),
+                      Text(topStoriesController.articles.publishedAt??"",style: const TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal),),
                       const SizedBox(width: 4,),
                       const Text("|"),
                       const SizedBox(width: 4,),
                       //#location
-                      Text(articles.author??"",style: const TextStyle(color: Colors.red,fontSize: 16,fontWeight: FontWeight.normal),),
+                      Text(topStoriesController.articles.author??"",style: const TextStyle(color: Colors.red,fontSize: 16,fontWeight: FontWeight.normal),),
 
                     ],
                   )
                 ],
               ),
-
             ),
           )
         ],
