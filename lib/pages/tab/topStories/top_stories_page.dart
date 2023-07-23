@@ -47,7 +47,6 @@ class _TopStoriesState extends State<TopStories> {
                         //#image
                         Container(
                           color: Colors.black12,
-                          //height: MediaQuery.of(context).size.height,
                           width: 190,
                           child: Image.network(topStoriesController.articleList[index].urlToImage??'',),
                         ),
@@ -63,7 +62,9 @@ class _TopStoriesState extends State<TopStories> {
                                 const SizedBox(height: 17,),
                                 //#title
                                 Text(
-                                    topStoriesController.articleList[index].title??"",style: const TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,),
+                                    topStoriesController.articleList[index].title??""
+                                  ,style: const TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.bold)
+                                  ,overflow: TextOverflow.ellipsis,),
                                 //#time & location
                                 Expanded(
                                   child: Row(
@@ -71,15 +72,19 @@ class _TopStoriesState extends State<TopStories> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       //# time
-                                      Text(topStoriesController.articleList[index].publishedAt??""
-                                        ,style: const TextStyle(color: Colors.black54,fontSize: 10,fontWeight: FontWeight.normal),),
+                                      Expanded(
+                                        child: Text(topStoriesController.articleList[index].publishedAt??""
+                                          ,style: const TextStyle(color: Colors.black54,fontSize: 10,fontWeight: FontWeight.normal),),
+                                      ),
                                       const SizedBox(width: 2,),
                                       const Text("|"),
                                       const SizedBox(width: 2,),
-                                      //#location
-                                      Text(topStoriesController.articleList[index].author??""
-                                        ,style: const TextStyle(color: Colors.red,fontSize: 10,fontWeight: FontWeight.normal)
-                                        ,overflow: TextOverflow.ellipsis,),
+                                      //#author
+                                      Expanded(
+                                        child: Text(topStoriesController.articleList[index].author??""
+                                          ,style: const TextStyle(color: Colors.red,fontSize: 10,fontWeight: FontWeight.normal)
+                                          ,overflow: TextOverflow.ellipsis,),
+                                      ),
 
                                     ],
                                   ),
